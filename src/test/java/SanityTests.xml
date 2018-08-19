@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="RetryFailedTestSuite" parallel="false">
+ <listeners>
+        <listeners class-name="analyser.Mytransformer"></listeners>
+</listeners>
+  <test name="RetryFailedTestCases">
+    <classes>
+      <class name="com.volksoft.qa.testcases.LoginpageTest"></class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

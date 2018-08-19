@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import com.volksoft.qa.testutil.*;
+import com.volksoft.qa.testutil.*;
 
 public class Testbase {
 	 public static Properties property;
@@ -41,10 +42,9 @@ public class Testbase {
 	  Eventcapture ecapture=new Eventcapture();
 	  edriver.register(ecapture);
 	  driver=edriver;
-	  
 	  driver.manage().window().maximize();
-	  driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
-	  driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+	  driver.manage().timeouts().implicitlyWait(TestUtil.ImpliciteWait, TimeUnit.SECONDS);
+	  driver.manage().timeouts().pageLoadTimeout(TestUtil.PageloadTimeOut, TimeUnit.SECONDS);
 	  driver.navigate().to("https://opensource-demo.orangehrmlive.com/");
 	  
   }

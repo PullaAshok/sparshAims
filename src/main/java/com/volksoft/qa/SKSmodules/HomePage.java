@@ -2,10 +2,13 @@ package com.volksoft.qa.SKSmodules;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.volksoft.qa.base.Testbase;
 
 public class HomePage extends Testbase {
+	
+	
 	@FindBy(xpath="//img[@src='/webres_5acde3dbd3adc6.90334155/orangehrmLeavePlugin/images/MyLeave.png']")
 	WebElement leavelist;
 	
@@ -33,8 +36,17 @@ public class HomePage extends Testbase {
 	@FindBy(id="menu_directory_viewDirectory")
 	WebElement Directory;
 	
+   public HomePage(){
+	PageFactory.initElements(driver, this);
 	
-	
-	
+      }
+ 	public AdminPage Clickonadminlink(){
+       Admin.click();
+       return new AdminPage();
+ 	  }
+ 	
+
+
+
 
 }

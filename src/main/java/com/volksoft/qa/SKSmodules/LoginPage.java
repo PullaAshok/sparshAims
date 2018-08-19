@@ -3,10 +3,7 @@ package com.volksoft.qa.SKSmodules;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.volksoft.qa.base.Testbase;
-
-
 
 public class LoginPage extends Testbase {
    //Pagefactory or Page library
@@ -18,20 +15,22 @@ public class LoginPage extends Testbase {
    @FindBy(id="btnLogin")
    WebElement loginbtn;
    
+   
+   
   public LoginPage() {
 	  PageFactory.initElements(driver, this);
       }
   
-  public HomePage loginpage(){
+  public void login(String Username,String Password){
 	  
-	  username.clear();
-	  username.sendKeys(property.getProperty("username"));
-	  password.clear();
-	  password.sendKeys(property.getProperty("password"));
+	  username.sendKeys(Username);
+	  // username.sendKeys(property.getProperty("username"));
+      password.sendKeys(Password);
+ // password.sendKeys(property.getProperty("password"));
 	  loginbtn.click();
-	  return new HomePage();
-	   
+	  //return new HomePage(); 
      }
+  
   public String verifytitle(){
 	  return driver.getTitle();
   }
